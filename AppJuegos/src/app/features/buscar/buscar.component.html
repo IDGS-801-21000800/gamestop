@@ -1,0 +1,35 @@
+<div class="p-5">
+
+    <div class="row">
+        <input (keyup)="onKey($event)" placeholder="Buscar" (click)="cargarJuegos()">
+        <div class="row m-3">
+            <div class="col-4 text-center">
+                <button class="btn btn-secondary" (click)="filtrarCategoria(1)">Aventura</button>
+            </div>
+            <div class="col-4 text-center">
+                <button class="btn btn-secondary" (click)="filtrarCategoria(2)">Accion</button>
+            </div>
+            <div class="col-4 text-center">
+                <button class="btn btn-secondary" (click)="filtrarCategoria(3)">Mundo abierto</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4" *ngFor="let juego of juegos; let i=index">
+                <div class="card">
+
+                    <h5 class="card-header">{{juego.nombre}}</h5>
+                    <div class="card-body">
+                        <img src="{{juego.imagen}}" class="img-thumbnail" height="50">
+                        <p>{{juego.descripcion}}</p>
+                    </div>
+                    <h5 class="card-footer">$ {{juego.precio}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row ">
+        <p class="text-center">GameStop <br> contacto&#64;gamestop.com <br> (55) 5747 45 46</p>
+    </div>
+</div>
